@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>刘柱 | 个人介绍</title>
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+      --radius: 20px;
+      --max: 1080px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #eef4ff 0%, var(--bg) 280px);
+      line-height: 1.7;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
+    .hero { padding: 56px 0 28px; }
+    .hero-card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.8);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 36px;
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+    .avatar {
+      width: 140px; height: 140px; border-radius: 28px;
+      display: grid; place-items: center;
+      background: linear-gradient(135deg, #dbeafe, #eff6ff);
+      color: var(--accent); font-size: 42px; font-weight: 700;
+      border: 1px solid #bfdbfe;
+    }
+    .tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 12px; border-radius: 999px;
+      background: var(--accent-soft); color: var(--accent);
+      font-size: 14px; font-weight: 600; margin-bottom: 12px;
+    }
+    h1 { margin: 0 0 10px; font-size: clamp(32px, 4vw, 48px); line-height: 1.15; }
+    .subtitle { margin: 0 0 16px; color: var(--muted); font-size: 17px; }
+    .meta { display: flex; flex-wrap: wrap; gap: 12px; margin: 18px 0 0; color: var(--muted); font-size: 15px; }
+    .meta span { background: #f8fafc; border: 1px solid var(--line); padding: 8px 12px; border-radius: 12px; }
+    .section { padding: 18px 0; }
+    .grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 20px; align-items: start; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 24px; }
+    h2 { margin: 0 0 18px; font-size: 22px; }
+    h3 { margin: 0 0 8px; font-size: 18px; }
+    .item + .item { border-top: 1px solid var(--line); margin-top: 18px; padding-top: 18px; }
+    .small { color: var(--muted); font-size: 14px; }
+    ul { margin: 10px 0 0 20px; padding: 0; }
+    li + li { margin-top: 6px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+    .chip { padding: 8px 12px; border-radius: 999px; background: #f8fafc; border: 1px solid var(--line); font-size: 14px; }
+    .footer { text-align: center; color: var(--muted); font-size: 14px; padding: 20px 0 42px; }
+    @media (max-width: 840px) {
+      .hero-card, .grid { grid-template-columns: 1fr; }
+      .avatar { width: 96px; height: 96px; border-radius: 20px; font-size: 30px; }
+      .hero-card { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="hero-card">
+        <div class="avatar">刘柱</div>
+        <div>
+          <div class="tag">Software Engineering Student</div>
+          <h1>刘柱</h1>
+          <p class="subtitle">安徽大学软件工程专业本科生，关注多模态学习、计算机视觉、遥感与时空数据分析，具备扎实的编程基础与项目实践经验。</p>
+          <div class="meta">
+            <span>电话：(+86) 177-5573-4673</span>
+            <span>邮箱：e22314067@stu.ahu.edu.cn</span>
+            <span>GitHub：vaibibabu</span>
+            <span>政治面貌：共青团员</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section grid">
+      <div class="card">
+        <h2>教育背景</h2>
+        <div class="item">
+          <h3>安徽大学 · 软件工程</h3>
+          <div class="small">本科在读</div>
+          <ul>
+            <li>学分绩点：90.03 / 182</li>
+            <li>综合排名：15 / 182</li>
+            <li>绩点排名：15 / 182</li>
+          </ul>
+        </div>
+        <div class="item">
+          <h3>核心课程</h3>
+          <ul>
+            <li>算法分析与设计、数据库原理、软件工程、面向对象程序设计</li>
+            <li>操作系统实验、数据库原理实验、软件工程实验、数据结构实验</li>
+            <li>高等数学、数字逻辑、软件需求分析、人机交互的软件工程方法</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>获奖情况</h2>
+        <div class="item">
+          <ul>
+            <li>2023 年学习优秀二等奖（Top 6%）</li>
+            <li>2023 年团学组织优秀干事奖</li>
+            <li>2024 年国家励志奖学金（Top 5%）</li>
+            <li>2024 年学术科技奖——团队一等奖</li>
+            <li>2024 年安徽大学三好学生（Top 3.3%）</li>
+            <li>2024 年暑期实践优秀个人</li>
+            <li>全国大学生测绘学科创新创业智能大赛——科技论文竞赛全国特等奖</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section grid">
+      <div class="card">
+        <h2>科研经历</h2>
+        <div class="item">
+          <h3>中国城市多年持续高热岛频率空间分异及驱动机制研究</h3>
+          <div class="small">科研项目 / 科技论文竞赛</div>
+          <p>基于 2017–2020 年多源遥感数据与再分析气象数据，构建城市地表热岛频率（SUHIF）指标体系，结合 LightGBM 与 SHAP 框架，对中国 502 个城市多年持续高热岛频率的时空分布特征及驱动机制进行系统分析。</p>
+          <p><strong>个人工作：</strong>负责遥感与气象数据预处理、SUHIF 指标计算实现、LightGBM 模型训练、结果可视化分析，以及研究报告整理。</p>
+        </div>
+
+        <div class="item">
+          <h3>基于多源数据的近岸海温深度学习预报方法及系统</h3>
+          <div class="small">发明专利 / 正在受审</div>
+          <p>面向近岸海温时空变化复杂、传统方法在多源数据融合与季节适应性方面不足的问题，提出基于多源海洋环境数据与深度学习模型融合的近岸海温预测方法。</p>
+          <p><strong>个人工作：</strong>参与多源数据预处理、特征工程设计、深度学习模型实现与训练，并协助技术文档整理。</p>
+        </div>
+
+        <div class="item">
+          <h3>基于自适应小波变换的 RGB-T 视频目标检测研究</h3>
+          <div class="small">国家级大学生创新创业训练计划项目 / 进行中</div>
+          <p>围绕低光照、遮挡与复杂背景下视频目标检测不稳定问题，基于 YOLOv13 设计 RGB-T 多模态检测框架，引入自适应小波变换融合模块与时序融合模块，提升检测鲁棒性与时序稳定性。</p>
+          <p><strong>个人工作：</strong>负责 YOLO 多模态算法复现、自适应小波变换融合模块实现，以及部分技术文档与研究报告撰写。</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>技能与实践</h2>
+        <div class="item">
+          <h3>技能标签</h3>
+          <div class="chips">
+            <span class="chip">C</span>
+            <span class="chip">C++</span>
+            <span class="chip">Python</span>
+            <span class="chip">Java</span>
+            <span class="chip">HTML / CSS / JavaScript</span>
+            <span class="chip">MySQL</span>
+            <span class="chip">深度学习基础</span>
+            <span class="chip">多模态学习</span>
+            <span class="chip">计算机视觉</span>
+          </div>
+        </div>
+
+        <div class="item">
+          <h3>英语水平</h3>
+          <ul>
+            <li>CET-4：548</li>
+            <li>CET-6：468</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <h3>学生实践</h3>
+          <ul>
+            <li>曾任街舞社部长，组织多项课外活动</li>
+            <li>曾任学生会干事，参与志愿活动与大型活动组织</li>
+            <li>参与两次“校友寻访调研团”暑期实践，并获优秀个人</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <h3>个人画像</h3>
+          <p>性格沉稳，做事踏实，具备良好的沟通能力与团队协作意识，能够在团队中持续输出稳定成果；热爱运动与跳舞，曾担任街舞社部长。</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      本页根据个人简历信息整理生成，可直接作为 GitHub Pages 主页使用。
+    </div>
+  </div>
+</body>
+</html>
