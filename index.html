@@ -3,206 +3,529 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>刘柱 | 个人介绍</title>
+  <title>刘柱 | Academic Homepage</title>
   <style>
     :root {
-      --bg: #f6f8fb;
-      --card: #ffffff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --line: #e5e7eb;
+      --bg: #f5f7fb;
+      --panel: #ffffff;
+      --text: #152033;
+      --muted: #5f6b7a;
+      --line: #e6ebf2;
       --accent: #2563eb;
-      --accent-soft: #dbeafe;
-      --shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
-      --radius: 20px;
-      --max: 1080px;
+      --accent-2: #0f172a;
+      --soft: #eff6ff;
+      --shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+      --radius: 24px;
+      --max: 1120px;
     }
+
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
       color: var(--text);
-      background: linear-gradient(180deg, #eef4ff 0%, var(--bg) 280px);
-      line-height: 1.7;
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.10), transparent 28%),
+        linear-gradient(180deg, #eef4ff 0%, var(--bg) 240px);
+      line-height: 1.75;
     }
+
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .wrap { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
-    .hero { padding: 56px 0 28px; }
+
+    .wrap {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+      background: rgba(245, 247, 251, 0.84);
+      border-bottom: 1px solid rgba(230, 235, 242, 0.9);
+    }
+
+    .nav-inner {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+      gap: 16px;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--accent-2);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .hero {
+      padding: 56px 0 28px;
+    }
+
     .hero-card {
-      background: var(--card);
-      border: 1px solid rgba(255,255,255,0.8);
-      border-radius: 28px;
+      background: var(--panel);
+      border: 1px solid rgba(255,255,255,0.95);
       box-shadow: var(--shadow);
-      padding: 36px;
+      border-radius: 32px;
+      padding: 40px;
       display: grid;
-      grid-template-columns: 140px 1fr;
-      gap: 28px;
+      grid-template-columns: 180px 1fr;
+      gap: 32px;
       align-items: center;
     }
+
     .avatar {
-      width: 140px; height: 140px; border-radius: 28px;
-      display: grid; place-items: center;
-      background: linear-gradient(135deg, #dbeafe, #eff6ff);
-      color: var(--accent); font-size: 42px; font-weight: 700;
-      border: 1px solid #bfdbfe;
+      width: 180px;
+      height: 180px;
+      border-radius: 32px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #dbeafe, #eff6ff 60%, #ffffff);
+      border: 1px solid #c7dbff;
+      color: var(--accent);
+      font-size: 54px;
+      font-weight: 700;
+      letter-spacing: 2px;
     }
-    .tag {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 6px 12px; border-radius: 999px;
-      background: var(--accent-soft); color: var(--accent);
-      font-size: 14px; font-weight: 600; margin-bottom: 12px;
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 12px;
     }
-    h1 { margin: 0 0 10px; font-size: clamp(32px, 4vw, 48px); line-height: 1.15; }
-    .subtitle { margin: 0 0 16px; color: var(--muted); font-size: 17px; }
-    .meta { display: flex; flex-wrap: wrap; gap: 12px; margin: 18px 0 0; color: var(--muted); font-size: 15px; }
-    .meta span { background: #f8fafc; border: 1px solid var(--line); padding: 8px 12px; border-radius: 12px; }
-    .section { padding: 18px 0; }
-    .grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 20px; align-items: start; }
-    .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 24px; }
-    h2 { margin: 0 0 18px; font-size: 22px; }
-    h3 { margin: 0 0 8px; font-size: 18px; }
-    .item + .item { border-top: 1px solid var(--line); margin-top: 18px; padding-top: 18px; }
-    .small { color: var(--muted); font-size: 14px; }
-    ul { margin: 10px 0 0 20px; padding: 0; }
-    li + li { margin-top: 6px; }
-    .chips { display: flex; flex-wrap: wrap; gap: 10px; }
-    .chip { padding: 8px 12px; border-radius: 999px; background: #f8fafc; border: 1px solid var(--line); font-size: 14px; }
-    .footer { text-align: center; color: var(--muted); font-size: 14px; padding: 20px 0 42px; }
-    @media (max-width: 840px) {
-      .hero-card, .grid { grid-template-columns: 1fr; }
-      .avatar { width: 96px; height: 96px; border-radius: 20px; font-size: 30px; }
-      .hero-card { padding: 24px; }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 4.2vw, 52px);
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-subtitle {
+      margin: 10px 0 0;
+      font-size: 19px;
+      color: var(--muted);
+    }
+
+    .hero-text {
+      margin: 18px 0 0;
+      max-width: 760px;
+      color: #334155;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .meta span, .meta a {
+      display: inline-flex;
+      align-items: center;
+      padding: 9px 12px;
+      border-radius: 12px;
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: white;
+      color: var(--accent-2);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    .section {
+      padding: 18px 0;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .section-title h2 {
+      margin: 0;
+      font-size: 28px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-title p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding: 26px;
+    }
+
+    .card h3 {
+      margin: 0 0 12px;
+      font-size: 20px;
+    }
+
+    .item + .item {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .chip {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      font-size: 14px;
+    }
+
+    .news-list, .plain-list {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .news-list li, .plain-list li {
+      margin: 10px 0;
+    }
+
+    .project {
+      padding: 2px 0;
+    }
+
+    .project h3 {
+      margin-bottom: 6px;
+      font-size: 19px;
+    }
+
+    .project p {
+      margin: 8px 0 0;
+    }
+
+    .project .role {
+      margin-top: 8px;
+      color: #334155;
+    }
+
+    .cv-box {
+      padding: 18px;
+      border: 1px dashed #bfd3ff;
+      border-radius: 18px;
+      background: linear-gradient(180deg, #f8fbff, #ffffff);
+      margin-top: 14px;
+    }
+
+    .footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      padding: 32px 0 48px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-card, .grid-2 {
+        grid-template-columns: 1fr;
+      }
+      .avatar {
+        width: 120px;
+        height: 120px;
+        border-radius: 24px;
+        font-size: 38px;
+      }
+      .hero-card {
+        padding: 26px;
+      }
+      .nav-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <section class="hero">
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="brand">刘柱 · Academic Homepage</div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#awards">Awards</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" id="about">
       <div class="hero-card">
         <div class="avatar">刘柱</div>
         <div>
-          <div class="tag">Software Engineering Student</div>
+          <div class="badge">Software Engineering Undergraduate</div>
           <h1>刘柱</h1>
-          <p class="subtitle">安徽大学软件工程专业本科生，关注多模态学习、计算机视觉、遥感与时空数据分析，具备扎实的编程基础与项目实践经验。</p>
+          <p class="hero-subtitle">安徽大学 · 软件工程本科生</p>
+          <p class="hero-text">
+            我主要关注多模态学习、计算机视觉、遥感智能分析与时空数据建模，正在围绕热环境遥感分析、近岸海温预测以及 RGB-T 视频目标检测等方向开展科研训练。
+            我希望持续积累算法研究与工程实现能力，进一步面向保研、科研竞赛与研究生阶段的学术发展。
+          </p>
           <div class="meta">
-            <span>电话：(+86) 177-5573-4673</span>
-            <span>邮箱：e22314067@stu.ahu.edu.cn</span>
-            <span>GitHub：vaibibabu</span>
-            <span>政治面貌：共青团员</span>
+            <span>安徽大学</span>
+            <span>综合排名 15 / 182</span>
+            <span>GPA 90.03 / 100</span>
+            <a href="mailto:e22314067@stu.ahu.edu.cn">e22314067@stu.ahu.edu.cn</a>
+            <a href="https://github.com/vaibibabu" target="_blank" rel="noreferrer">GitHub: vaibibabu</a>
+          </div>
+          <div class="cta">
+            <a class="btn primary" href="mailto:e22314067@stu.ahu.edu.cn">联系我</a>
+            <a class="btn" href="https://github.com/vaibibabu" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="btn" href="#projects">View Research</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section grid">
-      <div class="card">
-        <h2>教育背景</h2>
-        <div class="item">
-          <h3>安徽大学 · 软件工程</h3>
-          <div class="small">本科在读</div>
-          <ul>
-            <li>学分绩点：90.03 / 182</li>
-            <li>综合排名：15 / 182</li>
-            <li>绩点排名：15 / 182</li>
-          </ul>
-        </div>
-        <div class="item">
-          <h3>核心课程</h3>
-          <ul>
-            <li>算法分析与设计、数据库原理、软件工程、面向对象程序设计</li>
-            <li>操作系统实验、数据库原理实验、软件工程实验、数据结构实验</li>
-            <li>高等数学、数字逻辑、软件需求分析、人机交互的软件工程方法</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2>获奖情况</h2>
-        <div class="item">
-          <ul>
-            <li>2023 年学习优秀二等奖（Top 6%）</li>
-            <li>2023 年团学组织优秀干事奖</li>
-            <li>2024 年国家励志奖学金（Top 5%）</li>
-            <li>2024 年学术科技奖——团队一等奖</li>
-            <li>2024 年安徽大学三好学生（Top 3.3%）</li>
-            <li>2024 年暑期实践优秀个人</li>
-            <li>全国大学生测绘学科创新创业智能大赛——科技论文竞赛全国特等奖</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section grid">
-      <div class="card">
-        <h2>科研经历</h2>
-        <div class="item">
-          <h3>中国城市多年持续高热岛频率空间分异及驱动机制研究</h3>
-          <div class="small">科研项目 / 科技论文竞赛</div>
-          <p>基于 2017–2020 年多源遥感数据与再分析气象数据，构建城市地表热岛频率（SUHIF）指标体系，结合 LightGBM 与 SHAP 框架，对中国 502 个城市多年持续高热岛频率的时空分布特征及驱动机制进行系统分析。</p>
-          <p><strong>个人工作：</strong>负责遥感与气象数据预处理、SUHIF 指标计算实现、LightGBM 模型训练、结果可视化分析，以及研究报告整理。</p>
-        </div>
-
-        <div class="item">
-          <h3>基于多源数据的近岸海温深度学习预报方法及系统</h3>
-          <div class="small">发明专利 / 正在受审</div>
-          <p>面向近岸海温时空变化复杂、传统方法在多源数据融合与季节适应性方面不足的问题，提出基于多源海洋环境数据与深度学习模型融合的近岸海温预测方法。</p>
-          <p><strong>个人工作：</strong>参与多源数据预处理、特征工程设计、深度学习模型实现与训练，并协助技术文档整理。</p>
-        </div>
-
-        <div class="item">
-          <h3>基于自适应小波变换的 RGB-T 视频目标检测研究</h3>
-          <div class="small">国家级大学生创新创业训练计划项目 / 进行中</div>
-          <p>围绕低光照、遮挡与复杂背景下视频目标检测不稳定问题，基于 YOLOv13 设计 RGB-T 多模态检测框架，引入自适应小波变换融合模块与时序融合模块，提升检测鲁棒性与时序稳定性。</p>
-          <p><strong>个人工作：</strong>负责 YOLO 多模态算法复现、自适应小波变换融合模块实现，以及部分技术文档与研究报告撰写。</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2>技能与实践</h2>
-        <div class="item">
-          <h3>技能标签</h3>
+    <section class="section">
+      <div class="grid-2">
+        <div class="card">
+          <div class="section-title">
+            <h2>Research Interests</h2>
+            <p>当前关注方向</p>
+          </div>
           <div class="chips">
-            <span class="chip">C</span>
-            <span class="chip">C++</span>
-            <span class="chip">Python</span>
-            <span class="chip">Java</span>
-            <span class="chip">HTML / CSS / JavaScript</span>
-            <span class="chip">MySQL</span>
-            <span class="chip">深度学习基础</span>
-            <span class="chip">多模态学习</span>
-            <span class="chip">计算机视觉</span>
+            <span class="chip">Multimodal Learning</span>
+            <span class="chip">Computer Vision</span>
+            <span class="chip">Remote Sensing</span>
+            <span class="chip">Spatio-temporal Data Mining</span>
+            <span class="chip">Deep Learning for Environmental Science</span>
+          </div>
+          <div class="cv-box">
+            <strong>Academic Goal</strong>
+            <p style="margin:8px 0 0;">持续围绕多模态感知与智能分析方向开展研究，形成较完整的科研项目经历、专利与竞赛成果，为保研与进一步科研深造打下基础。</p>
           </div>
         </div>
 
-        <div class="item">
-          <h3>英语水平</h3>
-          <ul>
-            <li>CET-4：548</li>
-            <li>CET-6：468</li>
+        <div class="card">
+          <div class="section-title">
+            <h2>News</h2>
+            <p>近期动态</p>
+          </div>
+          <ul class="news-list">
+            <li><strong>2025</strong>：参与“基于自适应小波变换的RGB-T视频目标检测研究”国家级大创项目申报。</li>
+            <li><strong>2025</strong>：参与申请发明专利《基于多源数据的近岸海温深度学习预报方法及系统》。</li>
+            <li><strong>2025</strong>：完成《中国城市多年持续高热岛频率空间分异及驱动机制研究》相关研究训练。</li>
+            <li><strong>2024</strong>：获全国大学生测绘学科创新创业智能大赛科技论文竞赛全国特等奖。</li>
+            <li><strong>2024</strong>：获安徽大学三好学生、国家励志奖学金等荣誉。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="research">
+      <div class="section-title">
+        <h2>Education & Research Profile</h2>
+        <p>学术背景</p>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Education</h3>
+          <div class="item">
+            <strong>安徽大学 · 软件工程</strong>
+            <div class="muted">本科在读</div>
+            <p>具备较扎实的软件工程与计算机科学基础，注重算法理解、项目实现与科研训练结合。</p>
+          </div>
+          <div class="item">
+            <strong>Core Coursework</strong>
+            <p>算法分析与设计、数据库原理、软件工程、面向对象程序设计、操作系统实验、数据结构实验、数字逻辑、软件需求分析等。</p>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Research Summary</h3>
+          <div class="item">
+            <p>目前研究主题主要涵盖三类：</p>
+            <ul class="plain-list">
+              <li>基于遥感与机器学习的城市热环境时空分析。</li>
+              <li>基于多源海洋环境数据的深度学习预测方法。</li>
+              <li>基于可见光-红外多模态融合的视频目标检测。</li>
+            </ul>
+          </div>
+          <div class="item">
+            <p>在研究过程中兼顾<strong>数据处理、模型实现、实验分析、技术写作</strong>四类能力建设。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="section-title">
+        <h2>Selected Projects</h2>
+        <p>科研与项目经历</p>
+      </div>
+      <div class="card">
+        <div class="project item" style="padding-top:0;border-top:none;margin-top:0;">
+          <h3>中国城市多年持续高热岛频率空间分异及驱动机制研究</h3>
+          <div class="muted">科研项目 / 科技论文竞赛</div>
+          <p>针对传统热岛研究偏重强度分析、难以刻画热岛持续性的问题，基于 2017–2020 年多源遥感数据与再分析气象数据，构建城市地表热岛频率（SUHIF）指标体系，并结合 LightGBM 与 SHAP 框架，对中国 502 个城市多年持续高热岛频率的时空分布特征及驱动机制进行系统分析。</p>
+          <p class="role"><strong>My Role:</strong> 负责遥感与气象数据预处理、SUHIF 指标计算算法实现、LightGBM 模型训练与结果可视化分析，并参与研究报告整理。</p>
+        </div>
+
+        <div class="project item">
+          <h3>基于多源数据的近岸海温深度学习预报方法及系统</h3>
+          <div class="muted">发明专利 / 申请号：2025113278850</div>
+          <p>面向近岸海表温度受潮汐混合、河流输入、海底地形及气象要素共同影响、传统方法在多源数据融合与季节适应性方面存在不足的问题，参与提出基于多源海洋环境数据与深度学习模型融合的近岸海温预测方法与系统流程。</p>
+          <p class="role"><strong>My Role:</strong> 参与多源数据预处理、特征工程设计、深度学习模型实现与训练，并协助专利技术文档整理与实验结果分析。</p>
+        </div>
+
+        <div class="project item">
+          <h3>基于自适应小波变换的 RGB-T 视频目标检测研究</h3>
+          <div class="muted">国家级大学生创新创业训练计划项目</div>
+          <p>针对单模态视频目标检测在低光照、遮挡及复杂背景场景下鲁棒性不足的问题，基于 YOLOv13 设计 RGB-T 多模态视频目标检测框架，引入自适应小波变换融合模块与时序融合模块，以增强模态互补性和视频检测稳定性。</p>
+          <p class="role"><strong>My Role:</strong> 负责部分模型算法实现、训练与实验评估，并参与技术文档与研究报告撰写。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid-2">
+        <div class="card" id="awards">
+          <div class="section-title">
+            <h2>Awards & Honors</h2>
+            <p>奖项与荣誉</p>
+          </div>
+          <ul class="plain-list">
+            <li>全国大学生测绘学科创新创业智能大赛科技论文竞赛全国特等奖</li>
+            <li>安徽大学三好学生</li>
+            <li>国家励志奖学金</li>
+            <li>学术科技奖——团队一等奖</li>
+            <li>学习优秀二等奖</li>
+            <li>暑期实践优秀个人</li>
+            <li>团学组织优秀干事奖</li>
           </ul>
         </div>
 
-        <div class="item">
-          <h3>学生实践</h3>
-          <ul>
-            <li>曾任街舞社部长，组织多项课外活动</li>
-            <li>曾任学生会干事，参与志愿活动与大型活动组织</li>
-            <li>参与两次“校友寻访调研团”暑期实践，并获优秀个人</li>
-          </ul>
+        <div class="card" id="skills">
+          <div class="section-title">
+            <h2>Skills</h2>
+            <p>能力概览</p>
+          </div>
+          <div class="item" style="padding-top:0;border-top:none;margin-top:0;">
+            <strong>Programming</strong>
+            <div class="chips">
+              <span class="chip">C</span>
+              <span class="chip">C++</span>
+              <span class="chip">Python</span>
+              <span class="chip">Java</span>
+              <span class="chip">HTML / CSS / JavaScript</span>
+              <span class="chip">MySQL</span>
+            </div>
+          </div>
+          <div class="item">
+            <strong>Research Skills</strong>
+            <div class="chips">
+              <span class="chip">Machine Learning</span>
+              <span class="chip">Deep Learning</span>
+              <span class="chip">Data Preprocessing</span>
+              <span class="chip">Scientific Writing</span>
+              <span class="chip">Visualization</span>
+            </div>
+          </div>
+          <div class="item">
+            <strong>English</strong>
+            <p>CET-4: 548 · CET-6: 468</p>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div class="item">
-          <h3>个人画像</h3>
-          <p>性格沉稳，做事踏实，具备良好的沟通能力与团队协作意识，能够在团队中持续输出稳定成果；热爱运动与跳舞，曾担任街舞社部长。</p>
+    <section class="section" id="contact">
+      <div class="card">
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>欢迎交流科研与项目合作</p>
         </div>
+        <p>邮箱：<a href="mailto:e22314067@stu.ahu.edu.cn">e22314067@stu.ahu.edu.cn</a></p>
+        <p>GitHub：<a href="https://github.com/vaibibabu" target="_blank" rel="noreferrer">https://github.com/vaibibabu</a></p>
+        <p>如果后续补充论文、专利公开链接、个人简历 PDF 或头像，这个主页还可以继续升级为更完整的学术主页版本。</p>
       </div>
     </section>
 
     <div class="footer">
-      本页根据个人简历信息整理生成，可直接作为 GitHub Pages 主页使用。
+      © 2026 刘柱 · Built for GitHub Pages
     </div>
-  </div>
+  </main>
 </body>
 </html>
