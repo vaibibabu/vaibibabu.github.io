@@ -139,23 +139,92 @@
       color: #334155;
     }
 
-    .meta {
-      display: flex;
-      flex-wrap: wrap;
+    .hero-info {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 10px;
       margin-top: 20px;
     }
 
-    .meta span, .meta a {
-      display: inline-flex;
-      align-items: center;
-      padding: 9px 12px;
-      border-radius: 12px;
+    .info-card {
       background: #f8fafc;
       border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 10px 12px;
+      min-height: auto;
+    }
+
+    .info-label {
+      display: block;
+      font-size: 11px;
       color: var(--muted);
+      margin-bottom: 2px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .info-value {
+      display: block;
+      color: var(--accent-2);
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .info-value.small {
       font-size: 14px;
+      font-weight: 500;
+    }
+
+    .info-card a {
+      color: var(--accent-2);
       text-decoration: none;
+    }
+
+    .info-card a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    .info-card {
+      background: linear-gradient(180deg, #fbfdff, #f8fbff);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 14px 16px;
+      min-height: 86px;
+    }
+
+    .info-label {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+
+    .info-value {
+      display: block;
+      color: var(--accent-2);
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .info-value.small {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .info-card a {
+      color: var(--accent-2);
+      text-decoration: none;
+    }
+
+    .info-card a:hover {
+      color: var(--accent);
+      text-decoration: underline;
     }
 
     .cta {
@@ -290,7 +359,7 @@
     }
 
     @media (max-width: 900px) {
-      .hero-card, .grid-2 {
+      .hero-card, .grid-2, .hero-info {
         grid-template-columns: 1fr;
       }
       .avatar {
@@ -335,18 +404,25 @@
           <h1>刘柱</h1>
           <p class="hero-subtitle">安徽大学 · 软件工程本科生 · 共青团员</p>
           <p class="hero-text">
-            安徽大学软件工程专业本科在读，GPA 4.03 / 5.0，专业排名 15 / 182（前 9%）。
-            目前主要围绕多模态目标检测、机器学习预测与科研写作开展训练。
+            安徽大学软件工程专业本科在读，当前以科研训练与项目实践为主线，重点积累多模态目标检测、机器学习预测、数据分析与科研写作能力。
           </p>
-          <div class="meta">
-            <span>安徽大学</span>
-            <span>软件工程</span>
-            <span>GPA 4.03 / 5.0</span>
-            <span>排名 15 / 182</span>
-            <span>CET-6: 468</span>
-            <a href="tel:17755734673">17755734673</a>
-            <a href="mailto:e22314067@stu.ahu.edu.cn">e22314067@stu.ahu.edu.cn</a>
-            <a href="https://github.com/vaibibabu" target="_blank" rel="noreferrer">GitHub: vaibibabu</a>
+          <div class="hero-info">
+            <div class="info-card">
+              <span class="info-label">Education</span>
+              <span class="info-value">安徽大学 · 软件工程</span>
+            </div>
+            <div class="info-card">
+              <span class="info-label">GPA & Rank</span>
+              <span class="info-value">4.03 / 5.0 & 15 / 182</span>
+            </div>
+            <div class="info-card">
+              <span class="info-label">Email</span>
+              <span class="info-value small"><a href="mailto:e22314067@stu.ahu.edu.cn">e22314067@stu.ahu.edu.cn</a></span>
+            </div>
+            <div class="info-card">
+              <span class="info-label">GitHub</span>
+              <span class="info-value small"><a href="https://github.com/vaibibabu" target="_blank" rel="noreferrer">vaibibabu</a></span>
+            </div>
           </div>
           <div class="cta">
             <a class="btn primary" href="mailto:e22314067@stu.ahu.edu.cn">联系我</a>
