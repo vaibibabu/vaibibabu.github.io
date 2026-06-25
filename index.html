@@ -105,6 +105,15 @@
       font-weight: 700;
       letter-spacing: 2px;
       text-align: center;
+      overflow: hidden;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 22%;
+      display: block;
     }
 
     .badge {
@@ -398,14 +407,14 @@
   <main class="wrap">
     <section class="hero" id="about">
       <div class="hero-card">
-        <div class="avatar">刘柱</div>
+        <div class="avatar"><img src="liuzhu_photo.jpg" alt="刘柱证件照" /></div>
         <div>
           <div class="badge">Software Engineering Undergraduate</div>
           <h1>刘柱</h1>
           <p class="hero-subtitle">安徽大学 · 软件工程本科生 · 共青团员</p>
           <p class="hero-text">
-            安徽大学软件工程专业本科在读。虽然当下科研方面能力不足，但在持续努力补缺。</p>
-          <p> 当前以科研训练与项目实践为主线，重点积累多模态目标检测、机器学习预测、数据分析与科研写作能力。</p>
+            安徽大学软件工程专业本科在读，GPA 4.03/5.0，专业排名 15/182（前 9%）。目前主要围绕多源遥感数据建模、RGB-T 视频目标检测、机器学习预测建模与城市热岛分析开展科研训练。
+          </p>
           <div class="hero-info">
             <div class="info-card">
               <span class="info-label">Education</span>
@@ -413,21 +422,21 @@
             </div>
             <div class="info-card">
               <span class="info-label">GPA & Rank</span>
-              <span class="info-value">4.03 / 5.0 & 15 / 182</span>
+              <span class="info-value">4.03 / 5.0 · 15 / 182</span>
             </div>
             <div class="info-card">
               <span class="info-label">Email</span>
               <span class="info-value small"><a href="mailto:e22314067@stu.ahu.edu.cn">e22314067@stu.ahu.edu.cn</a></span>
             </div>
             <div class="info-card">
-              <span class="info-label">GitHub</span>
-              <span class="info-value small"><a href="https://github.com/vaibibabu" target="_blank" rel="noreferrer">vaibibabu</a></span>
+              <span class="info-label">Phone</span>
+              <span class="info-value small"><a href="tel:17755734673">17755734673</a></span>
             </div>
           </div>
           <div class="cta">
             <a class="btn primary" href="mailto:e22314067@stu.ahu.edu.cn">联系我</a>
-            <a class="btn" href="https://github.com/vaibibabu" target="_blank" rel="noreferrer">GitHub</a>
             <a class="btn" href="#research">查看科研经历</a>
+            <a class="btn" href="#competition">查看竞赛经历</a>
           </div>
         </div>
       </div>
@@ -443,7 +452,7 @@
           <h3>安徽大学 · 软件工程</h3>
           <div class="item" style="padding-top:0;border-top:none;margin-top:0;">
             <div class="muted">本科在读</div>
-            <p>GPA：4.03 / 5.0，专业排名 15 / 182（前 9%）。</p>
+            <p>GPA：4.03 / 5.0；专业排名：15 / 182（前 9%）。</p>
             <p>核心课程（90+）：面向对象程序设计、数据库原理、算法分析与设计、高等数学（一）、高等数学（二）、软件工程。</p>
           </div>
           <div class="item">
@@ -455,15 +464,15 @@
         <div class="card">
           <h3>Profile Summary</h3>
           <div class="item" style="padding-top:0;border-top:none;margin-top:0;">
-            <p>目前研究与实践方向主要包括：</p>
+            <p>目前科研与实践方向主要包括：</p>
             <ul class="plain-list">
-              <li>基于多源遥感与再分析气象数据的环境建模与空间预测。</li>
-              <li>基于 RGB-T 多模态融合的视频目标检测方法研究。</li>
-              <li>基于机器学习与深度学习的预测建模与实验分析。</li>
+              <li>基于 MODIS、ERA5 等多源数据的近岸海温空间预测与预报。</li>
+              <li>基于 YOLOv13 与 RGB-T 多模态数据的视频目标检测模型构建。</li>
+              <li>基于随机森林、1D CNN、LightGBM 等方法的预测建模与实验分析。</li>
             </ul>
           </div>
           <div class="item">
-            <p>注重将<strong>数据预处理、模型实现、实验评估、可视化表达、科研写作</strong>结合到完整项目流程中。</p>
+            <p>注重将<strong>数据处理、模型实现、实验分析、图表绘制与科研写作</strong>结合到完整项目流程中。</p>
           </div>
         </div>
       </div>
@@ -480,10 +489,10 @@
             <li>2023 年学习优秀二等奖（Top 6%）</li>
             <li>2023 年团学组织优秀干事奖</li>
             <li>2024 年国家励志奖学金（Top 5%）</li>
-            <li>2024 年学术科技奖——团队一等奖</li>
+            <li>2024 年学术科技奖 -- 团队一等奖</li>
             <li>2024 年安徽大学三好学生（Top 3.3%）</li>
             <li>2024 年暑期实践优秀个人</li>
-            <li>2025 年优秀团员</li>
+            <li>2024 年优秀团员</li>
           </ul>
         </div>
 
@@ -493,10 +502,10 @@
             <p>近期动态</p>
           </div>
           <ul class="news-list">
-            <li><strong>2025</strong>：参与国家级大学生创新创业训练计划项目“基于自适应小波变换的 RGB-T 视频目标检测研究”。</li>
-            <li><strong>2025</strong>：参与发明专利《基于多源数据的近岸海温深度学习预报方法及系统》申请。</li>
-            <li><strong>2025</strong>：完成 EI 论文《Tea Order Quantity Prediction via Random Forest and 1D CNN Soft Voting Ensemble》相关研究与撰写。</li>
-            <li><strong>2024</strong>：获全国大学生测绘学科创新创业智能大赛科技论文竞赛全国特等奖。</li>
+            <li><strong>2026</strong>：参与《遥感学报》论文《中国城市多年持续高热岛频率空间分异及其驱动机制研究》，目前处于审稿阶段。</li>
+            <li><strong>2026</strong>：参与国家级大学生创新创业训练计划项目“基于自适应小波变换的 RGB-T 视频目标检测研究”。</li>
+            <li><strong>2026</strong>：发明专利“基于多源数据的近岸海温深度学习预报方法及系统”已被国家知识产权局受理。</li>
+            <li><strong>2025</strong>：全国大学生测绘学科创新创业智能大赛科技论文竞赛获全国特等奖。</li>
           </ul>
         </div>
       </div>
@@ -512,23 +521,32 @@
           <h3>发明专利｜基于多源数据的近岸海温深度学习预报方法及系统</h3>
           <div class="muted">角色：专利第三作者，空间建模负责人</div>
           <p><strong>任务：</strong>负责基于多源遥感数据（MODIS、ERA5）构建海表温度空间预测模型。</p>
-          <p><strong>行动：</strong>基于 MODIS 遥感数据与 ERA5 再分析气象数据构建多源特征体系，结合经纬度等空间信息，建立海表温度空间回归模型；采用 Random Forest 算法刻画海表温度与环境变量之间的非线性关系，并通过 GridSearchCV 进行模型参数优化；在此基础上完成从点数据到栅格数据（GeoTIFF）的空间映射，实现海表温度空间分布可视化，并进行系统评估与特征重要性分析。</p>
+          <p><strong>行动：</strong>基于 MODIS 遥感数据与 ERA5 再分析气象数据等构建多源特征体系，结合经纬度等空间信息，建立海表温度空间回归模型；采用 Random Forest 算法刻画海表温度与环境变量之间的非线性关系，并通过 GridSearchCV 进行模型参数优化以提升泛化能力。</p>
+          <p class="role"><strong>结果：</strong>专利被国家知识产权局受理；模型实现逐小时预测与 48 小时预报能力；输出公里级空间分辨率海温结果；应用于珠江口近岸区域环境监测。</p>
         </div>
 
         <div class="project item">
           <h3>国家级大学生创新创业训练计划项目｜基于自适应小波变换的 RGB-T 视频目标检测研究</h3>
-          <div class="muted">角色：核心成员</div>
+          <div class="muted">角色：核心成员，模型构建者</div>
           <p><strong>任务：</strong>负责模型基础搭建与部分模块实现。</p>
-          <p><strong>行动：</strong>完成 YOLOv13 基线模型复现与训练环境搭建，实现 RGB 与红外图像输入对齐及简单特征拼接融合；初步实现小波变换模块用于图像高低频分解，并嵌入网络前端进行特征增强；同时完成 KAIST 数据集基本预处理与格式转换，搭建基础训练流程并完成初步实验验证。</p>
-          <p class="role"><strong>结果：</strong>当前已完成基线模型与核心模块初步实现，验证模型可正常训练与推理，项目进入进一步优化与实验阶段。</p>
+          <p><strong>行动：</strong>基于 YOLOv13 基线与 RGB-T 多模态数据构建双模态检测框架，结合 RGB 当前帧、红外当前帧及 RGB 历史帧等时空信息，建立面向视频目标检测的多分支融合模型；通过时序增强模块引入历史信息，并采用注意力模块、目标感知融合模块刻画 RGB 与红外特征之间的互补关系。</p>
+          <p class="role"><strong>结果：</strong>当前已完成基线模型与核心模块的初步实现，项目进入进一步优化与实验阶段，并计划产出 1-2 项发明专利、1-2 篇学术论文。</p>
         </div>
 
         <div class="project item">
           <h3>EI 论文｜Tea Order Quantity Prediction via Random Forest and 1D CNN Soft Voting Ensemble</h3>
           <div class="muted">角色：独立作者</div>
-          <p><strong>任务：</strong>面向零售场景订单量预测问题，将奶茶订单购买数量预测建模为三分类任务，提升订单需求分析与库存决策支持能力。</p>
-          <p><strong>行动：</strong>基于 2019–2024 年 31,894 条订单数据与 7 个可解释特征，构建 Random Forest、1D CNN 和 2-layer MLP 基线模型；提出 Random Forest + 1D CNN 软投票集成方法，完成数据划分、特征工程、权重搜索、混淆矩阵分析、特征重要性分析、消融实验及统计可靠性检验。</p>
-          <p class="role"><strong>结果：</strong>在 6,379 条测试集上取得 0.659 Accuracy、0.650 Macro-F1，系统验证了集成模型在零售订单量预测中的有效性。</p>
+          <p><strong>任务：</strong>负责选题设计、数据处理、模型实现、实验分析和论文撰写。</p>
+          <p><strong>行动：</strong>基于 2019-2024 年 31,894 条订单数据与多个可解释特征，构建随机森林、1D CNN 和 2-layer MLP 基线模型；使用 Random Forest + 1D CNN 软投票集成方法，完成订单数量预测。</p>
+          <p class="role"><strong>结果：</strong>在 6,379 条测试集上取得较好的效果，验证了集成模型在零售订单量预测中的有效性。</p>
+        </div>
+
+        <div class="project item">
+          <h3>《遥感学报》｜中国城市多年持续高热岛频率空间分异及其驱动机制研究</h3>
+          <div class="muted">角色：第四作者</div>
+          <p><strong>任务：</strong>负责模型基础实现、实验分析和论文撰写。</p>
+          <p><strong>行动：</strong>完成基础模型实现，采用 LightGBM 拟合热岛频率与气候、地表属性及城市形态因子之间的非线性关系，并利用 SHAP 量化各驱动因素的相对贡献；参与部分文献写作与图片处理。</p>
+          <p class="role"><strong>结果：</strong>揭示了中国城市热岛频率显著的昼夜与南北空间分异特征，识别出植被差异、降水和地表反照率差异等关键影响因素；目前处于《遥感学报》审稿阶段。</p>
         </div>
       </div>
     </section>
@@ -540,9 +558,9 @@
       </div>
       <div class="card">
         <div class="project item" style="padding-top:0;border-top:none;margin-top:0;">
-          <h3>全国大学生测绘学科创新创业智能大赛——科技论文竞赛</h3>
+          <h3>全国大学生测绘学科创新创业智能大赛 -- 科技论文竞赛</h3>
           <div class="muted">角色：团队建模手，负责核心算法设计</div>
-          <p><strong>贡献：</strong>独立完成模型设计，使用 Python 完成算法编写，并使用 R 语言绘制全部图像。</p>
+          <p><strong>贡献：</strong>独立完成模型设计，使用 Python 语言完成算法编写，并绘制所有图表。</p>
           <p class="role"><strong>成果：</strong>最终在全国 120+ 支参赛队伍中获得全国特等奖（前 10%）。</p>
         </div>
       </div>
@@ -550,24 +568,12 @@
 
     <section class="section" id="experience">
       <div class="section-title">
-        <h2>Practice Experience</h2>
-        <p>实践经历</p>
+        <h2>Self Evaluation</h2>
+        <p>自我评价</p>
       </div>
-      <div class="grid-2">
-        <div class="card">
-          <h3>学生会干事</h3>
-          <div class="item" style="padding-top:0;border-top:none;margin-top:0;">
-            <p><strong>职责：</strong>负责图书馆志愿服务工作的组织与统筹，参与运动会、元旦晚会等大型活动的策划与执行，协调多团队推进活动落地。</p>
-            <p><strong>收获：</strong>提升了大型活动组织与统筹能力，增强了多团队沟通协调能力，具备在复杂任务环境下的执行力与抗压能力。</p>
-          </div>
-        </div>
-        <div class="card">
-          <h3>社团部门负责人</h3>
-          <div class="item" style="padding-top:0;border-top:none;margin-top:0;">
-            <p><strong>职责：</strong>负责部门日常管理与人员协调，制定活动与训练计划，组织成员开展常规训练与集体活动；参与社团整体运营与活动统筹。</p>
-            <p><strong>收获：</strong>提升了团队管理与组织协调能力，增强了沟通表达与执行能力，培养了在团队环境下推进任务落实的能力。</p>
-          </div>
-        </div>
+      <div class="card">
+        <p>我深知自己学校层次不高，接受到的教育程度有限，英语水平也不高。在科研方面没有什么成果，没有发表过哪怕一篇高水平的学术论文。在竞赛方面的经历也不丰富，唯一参与的比赛甚至都是其他专业的。</p>
+        <p>但是我最大的优点就是能清楚地认识到自己的不足，并且不断地改进自己。所以我相信，如果能有在贵校深造的机会，我一定会牢牢把握，不断提升自己。</p>
       </div>
     </section>
 
@@ -578,23 +584,23 @@
       </div>
       <div class="card">
         <div class="item" style="padding-top:0;border-top:none;margin-top:0;">
-          <strong>Programming</strong>
+          <strong>Programming & Tools</strong>
           <div class="chips">
-            <span class="chip">C</span>
-            <span class="chip">C++</span>
             <span class="chip">Python</span>
-            <span class="chip">Java</span>
-            <span class="chip">HTML / CSS / JavaScript</span>
-            <span class="chip">MySQL</span>
+            <span class="chip">R</span>
+            <span class="chip">GridSearchCV</span>
+            <span class="chip">SHAP</span>
           </div>
         </div>
         <div class="item">
           <strong>Research Skills</strong>
           <div class="chips">
-            <span class="chip">Machine Learning</span>
-            <span class="chip">Deep Learning</span>
-            <span class="chip">multimodal</span>
-            <span class="chip">Scientific Writing</span>
+            <span class="chip">Random Forest</span>
+            <span class="chip">1D CNN</span>
+            <span class="chip">LightGBM</span>
+            <span class="chip">YOLOv13</span>
+            <span class="chip">RGB-T Detection</span>
+            <span class="chip">Remote Sensing Modeling</span>
           </div>
         </div>
       </div>
@@ -608,7 +614,6 @@
         </div>
         <p>电话：<a href="tel:17755734673">17755734673</a></p>
         <p>邮箱：<a href="mailto:e22314067@stu.ahu.edu.cn">e22314067@stu.ahu.edu.cn</a></p>
-        <p>GitHub：<a href="https://github.com/vaibibabu" target="_blank" rel="noreferrer">https://github.com/vaibibabu</a></p>
       </div>
     </section>
 
